@@ -1,38 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
 .App {
-  text-align: center;
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(180deg, #64dfce, #4c8be3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 20px 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Wrapper {
+    display: flex;
+    flex-flow: column;
+    width: 45%;
+    background-color: white;
+    padding: 20px;
+    overflow: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Header {
+    padding: 20px;
+    width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Header span {
+    font-size: 40px;
+    font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.input-con {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px 0px 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-con input {
+    width: 80%;
+    border: 2px solid #d3d3d3;
+    padding: 5px 15px;
+    font-size: 25px;
+    border-radius: 10px;
+    outline: #d3d3d3;
+    color: #7e7e7e;
+}
+
+.input-con button {
+    font-size: 30px;
+    color: white;
+    background-color: #8e49e9;
+    border: none;
+    padding: 0px 20px;
+    border-radius: 10px;
+}
+
+.Tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.Tasks .task {
+    width: 90%;
+    font-size: 30px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 0px 20px;
+}
+
+.Tasks .task span {
+    width: 100%;
+    background-color: #dbdada;
+    padding: 5px 10px;
+    color: black;
+    font-size: 30px;
+    overflow-wrap: anywhere;
+}
+
+.Tasks .task button {
+    display: none;
+}
+
+.Tasks .task:hover button {
+    display: block;
+    transform: translateX(0);
+    animation: delete 0.5s ease-in;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 3px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Empty{
+    margin-bottom: 20px ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 30px;
+    color: #7e7e7e;
+    
+}
+.Bottom-con{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+.Bottom-con .task_count{
+    font-size: 22px;
+}
+.Bottom-con .task_count span{
+    color: red;
+}
+.Bottom-con button{
+    border: none;
+    font-size: 22px;
+    padding: 5px 15px;
+    background-color:#8e49e9 ;
+    color: white;
+    border-radius: 10px;
+}
+@media screen and (max-width:1636px) {
+    .Wrapper{
+   width: 800px;
+   margin: 20px ;
+    }
+}
+@media screen and (max-width:775px) {
+    .Wrapper{
+        width: 90%;
+    }
+    .Tasks .task span{
+        font-size: 20px;
+    }
+    .Tasks .task button{
+        padding: 1px 5px;
+    }
+    .Bottom-con .task_count{
+        font-size: 20px;
+    }
+}
+@media screen  and (max-width:595px){
+    .Wrapper{
+        width: 90%;
+    }
+    .Wrapper .Header span{
+        font-size: 30px;
+    }
+    .Wrapper .input-con input{
+        font-size: 15px;
+    }
+    .Wrapper .input-con button{
+        padding: 0 13px;
+    }
+    .Tasks .task span{
+        font-size: 17px;
+    }
+    .Tasks .task:hover button{
+ 
+        padding: 5px 10px;
+    }
+    .Tasks .task button svg{
+        height: 11px;
+        padding: 0px;
+
+    }
+    .Bottom-con .task_count{
+        font-size: 17px;
+    }
+    .Bottom-con button{
+     
+        font-size: 17px;
+        padding: 5px 10px;
+        background-color:#8e49e9 ;
+        color: white;
+        border-radius: 10px;
+    }
+    .Empty{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:483px) {
+    .Wrapper{
+        width: 90%;
+        height: max-content;
+    }
+    .Wrapper .Header span{
+        font-size: 26px;
+    }
+    .Wrapper .input-con input{
+        font-size: 12px;
+    }
+    .Wrapper .input-con button{
+        padding: 0 10px;
+        font-size: 25px;
+    }
+    .Tasks .task span{
+        font-size: 13px;
+    }
+    .Tasks .task button{
+ 
+      padding: 0px;
+    }
+    .Tasks .task button svg{
+        height: 8px;
+        padding: 0px;
+
+    }
+    .Bottom-con .task_count{
+        font-size: 13px;
+    }
+    .Bottom-con button{
+     
+        font-size: 17px;
+        padding: 5px 10px;
+        background-color:#8e49e9 ;
+        color: white;
+        border-radius: 10px;
+    }
+
+}
+@media screen and (max-width:393px) {
+    .Header{
+        flex-wrap: wrap;
+
+    }
+    .Tasks .task span{
+        font-size: 12px;
+    }
+    .Bottom-con{
+        flex-wrap: wrap;
+    }
+    .Bottom-con .task_count{
+        margin-top: 15px;
+    }
+    .Bottom-con button{
+        margin-top: 15px ;
+    }
+}
+@media screen  and (max-width:372px){
+    .Tasks .task span{
+        font-size: 9px;
+    }
+}
+@keyframes delete {
+    0% {
+        transform: translateX(40%);
+    }
+
+    100% {
+
+        transform: translateX(0);
+    }
 }
